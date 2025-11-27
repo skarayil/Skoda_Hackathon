@@ -23,7 +23,7 @@ Hackathon finalinde jüriye sunduğumuz ve **birinciliği getiren** interaktif s
 
 👉 **[📽️ Interaktif Sunumu Aç](https://skarayil.github.io/Skoda_Hackathon/presentation.html)**
 
-> *16 slaytlık sunumumuz, projenin tüm yönlerini detaylı grafikler ve animasyonlarla anlatıyor. Dosyayı tarayıcınızda açarak ok tuşları veya butonlarla gezinebilirsiniz.*
+> *16 slaytlık sunumumuz, projenin tüm yönlerini detaylı grafikler ve animasyonlarla anlatıyor. Dosyayı tarayıcınızda açarak ok tuşları ile gezinebilirsiniz.*
 
 <div align="center">
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXp5Z3RxMzB4OGJkNXR3ZmRoYnNkZndyeGx6cGRkdm5yOHBpZnhxYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif" width="400" alt="AI Analytics"/>
