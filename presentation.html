@@ -31,11 +31,14 @@
             font-family: 'Inter', sans-serif;
             overflow: hidden;
             background: #f0fdf4;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Arkaplan Animasyonu */
         .bg-blob {
-            position: absolute;
+            position: fixed;
             filter: blur(90px);
             z-index: -1;
             opacity: 0.5;
@@ -50,7 +53,6 @@
             50% { transform: translate(40px, 30px); }
         }
 
-        /* Slide Yapısı */
         .slide {
             display: none;
             width: 100vw;
@@ -58,35 +60,47 @@
             position: absolute;
             top: 0;
             left: 0;
-            padding: 1rem 3rem; /* Padding azaltıldı daha çok içerik sığsın diye */
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 4rem 2rem 6rem 2rem; 
             box-sizing: border-box;
             opacity: 0;
-            transition: opacity 0.6s ease, transform 0.6s ease;
-            transform: translateX(60px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateX(30px);
         }
 
         .slide.active {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             opacity: 1;
             transform: translateX(0);
             z-index: 10;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        /* Glassmorphism Kartlar */
+        .slide.active > .max-w-7xl {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .slide::-webkit-scrollbar { width: 8px; }
+        .slide::-webkit-scrollbar-track { background: transparent; }
+        .slide::-webkit-scrollbar-thumb { background: rgba(75, 168, 46, 0.2); border-radius: 10px; }
+        .slide::-webkit-scrollbar-thumb:hover { background: rgba(75, 168, 46, 0.5); }
+
         .glass-panel {
             background: var(--glass-bg);
             backdrop-filter: blur(16px);
             border: 1px solid var(--glass-border);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            max-width: 100%;
         }
 
-        /* Animasyonlu Giriş */
         .stagger-item {
             opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .slide.active .stagger-item:nth-child(1) { animation-delay: 0.1s; }
         .slide.active .stagger-item:nth-child(2) { animation-delay: 0.2s; }
@@ -97,7 +111,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* İkon Kutusu */
         .icon-box {
             display: flex;
             align-items: center;
@@ -109,11 +122,6 @@
         }
         .icon-box:hover { transform: translateY(-5px); }
 
-        /* Scrollbar Gizleme (İçerik taşarsa) */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Tablo Stili */
         table { width: 100%; border-collapse: collapse; }
         th { text-align: left; padding: 12px; font-size: 0.85rem; color: #666; font-weight: 600; border-bottom: 1px solid #eee; }
         td { padding: 12px; font-size: 0.9rem; border-bottom: 1px solid #f9f9f9; }
@@ -127,15 +135,11 @@
     <div class="bg-blob blob-2"></div>
     <div class="bg-blob blob-3"></div>
 
-    <div class="fixed top-0 left-0 w-full h-1.5 bg-gray-100 z-50">
-        <div id="progress" class="h-full bg-gradient-to-r from-skoda-green to-summer-teal transition-all duration-500" style="width: 0%"></div>
-    </div>
-
     <div id="slideContainer" class="w-full h-full relative">
 
         <div class="slide active items-center justify-center text-center">
             <div class="glass-panel p-16 rounded-[2.5rem] max-w-5xl mx-auto stagger-item border-l-[12px] border-skoda-green">
-                <h1 class="text-8xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-skoda-dark to-skoda-green mb-8 leading-tight">
+                <h1 class="text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-skoda-dark to-skoda-green mb-8 leading-tight">
                     ŠKODA AI<br>Skill Coach
                 </h1>
                 <p class="text-3xl font-light text-gray-600 mb-10 tracking-wide">The Next-Generation Talent Intelligence System</p>
@@ -148,7 +152,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <div class="mb-8 stagger-item">
                     <h2 class="text-5xl font-bold text-gray-900">The Problem</h2>
                     <p class="text-2xl text-skoda-green mt-2">Skills Are Evolving Faster Than People Data</p>
@@ -160,26 +164,11 @@
                             Current Pain Points
                         </h3>
                         <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <span class="text-red-500 text-xl mr-3">•</span>
-                                <span class="text-lg text-gray-800">Mandatory certifications expire silently</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-500 text-xl mr-3">•</span>
-                                <span class="text-lg text-gray-800">Managers lack reliable skill visibility</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-500 text-xl mr-3">•</span>
-                                <span class="text-lg text-gray-800">Career paths are unclear</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-500 text-xl mr-3">•</span>
-                                <span class="text-lg text-gray-800">HRBP decisions rely on manual spreadsheets</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-red-500 text-xl mr-3">•</span>
-                                <span class="text-lg text-gray-800">No long-term skill forecasting</span>
-                            </li>
+                            <li class="flex items-start"><span class="text-red-500 text-xl mr-3">•</span><span class="text-lg text-gray-800">Mandatory certifications expire silently</span></li>
+                            <li class="flex items-start"><span class="text-red-500 text-xl mr-3">•</span><span class="text-lg text-gray-800">Managers lack reliable skill visibility</span></li>
+                            <li class="flex items-start"><span class="text-red-500 text-xl mr-3">•</span><span class="text-lg text-gray-800">Career paths are unclear</span></li>
+                            <li class="flex items-start"><span class="text-red-500 text-xl mr-3">•</span><span class="text-lg text-gray-800">HRBP decisions rely on manual spreadsheets</span></li>
+                            <li class="flex items-start"><span class="text-red-500 text-xl mr-3">•</span><span class="text-lg text-gray-800">No long-term skill forecasting</span></li>
                         </ul>
                     </div>
                     
@@ -188,30 +177,12 @@
                             What ŠKODA Needs
                         </h3>
                         <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <span class="text-skoda-green text-xl font-bold mr-3">✓</span>
-                                <span class="text-lg text-gray-800">A unified skill intelligence system</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-skoda-green text-xl font-bold mr-3">✓</span>
-                                <span class="text-lg text-gray-800">Automated risk detection</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-skoda-green text-xl font-bold mr-3">✓</span>
-                                <span class="text-lg text-gray-800">Real-time readiness insights</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-skoda-green text-xl font-bold mr-3">✓</span>
-                                <span class="text-lg text-gray-800">Personalized career growth</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-skoda-green text-xl font-bold mr-3">✓</span>
-                                <span class="text-lg text-gray-800">Long-term skill forecasting</span>
-                            </li>
-                             <li class="flex items-start">
-                                <span class="text-skoda-green text-xl font-bold mr-3">✓</span>
-                                <span class="text-lg text-gray-800">Enterprise-level reliability</span>
-                            </li>
+                            <li class="flex items-start"><span class="text-skoda-green text-xl font-bold mr-3">✓</span><span class="text-lg text-gray-800">A unified skill intelligence system</span></li>
+                            <li class="flex items-start"><span class="text-skoda-green text-xl font-bold mr-3">✓</span><span class="text-lg text-gray-800">Automated risk detection</span></li>
+                            <li class="flex items-start"><span class="text-skoda-green text-xl font-bold mr-3">✓</span><span class="text-lg text-gray-800">Real-time readiness insights</span></li>
+                            <li class="flex items-start"><span class="text-skoda-green text-xl font-bold mr-3">✓</span><span class="text-lg text-gray-800">Personalized career growth</span></li>
+                            <li class="flex items-start"><span class="text-skoda-green text-xl font-bold mr-3">✓</span><span class="text-lg text-gray-800">Long-term skill forecasting</span></li>
+                             <li class="flex items-start"><span class="text-skoda-green text-xl font-bold mr-3">✓</span><span class="text-lg text-gray-800">Enterprise-level reliability</span></li>
                         </ul>
                     </div>
                 </div>
@@ -222,7 +193,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <div class="mb-6 stagger-item">
                     <h2 class="text-4xl font-bold text-gray-900">Five AI Engines</h2>
                     <p class="text-xl text-skoda-green">Powering ŠKODA's Talent Intelligence</p>
@@ -257,7 +228,7 @@
                         <h3 class="font-bold text-gray-900 text-lg">Career Path (Azure AI)</h3>
                         <p class="text-sm text-gray-600 mt-2 leading-relaxed">Generates top 3 future roles with skill gaps and timeline predictions.</p>
                     </div>
-                     <div class="glass-panel p-6 rounded-2xl hover:bg-white transition col-span-2 group">
+                      <div class="glass-panel p-6 rounded-2xl hover:bg-white transition col-span-2 group">
                         <div class="flex items-start">
                             <div class="icon-box w-12 h-12 mb-4 text-orange-600 bg-orange-50 group-hover:bg-orange-600 group-hover:text-white transition-colors mr-4">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
@@ -281,7 +252,7 @@
                         <div class="h-0.5 flex-1 bg-gray-300 mx-4 relative">
                             <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-100 px-2 text-xs text-gray-500">Processing</div>
                         </div>
-                         <div class="bg-gradient-to-r from-skoda-dark to-skoda-green text-white px-6 py-4 rounded-xl shadow-lg text-center">
+                          <div class="bg-gradient-to-r from-skoda-dark to-skoda-green text-white px-6 py-4 rounded-xl shadow-lg text-center">
                             <div class="font-bold">5 AI Engines</div>
                         </div>
                         <div class="h-0.5 flex-1 bg-gray-300 mx-4 relative">
@@ -298,7 +269,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <div class="text-center mb-10 stagger-item">
                     <h2 class="text-5xl font-bold text-gray-900">Multi-Role Intelligence</h2>
                     <p class="text-2xl text-skoda-green mt-2">Three User Personas — One AI Brain</p>
@@ -363,7 +334,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-6 text-gray-900 stagger-item">Manager View: Team Capability</h2>
                 
                 <div class="grid grid-cols-12 gap-6 stagger-item">
@@ -428,7 +399,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-2 text-gray-900 stagger-item">Skill Risk Radar</h2>
                 <p class="text-xl text-skoda-green mb-8 stagger-item">AI-Powered Risk Detection & Prevention</p>
 
@@ -491,7 +462,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-6 text-gray-900 stagger-item">HRBP Dashboard: Org-Wide Intelligence</h2>
                 
                 <div class="grid grid-cols-4 gap-6 mb-8 stagger-item">
@@ -510,7 +481,7 @@
                         <div class="text-4xl font-extrabold text-gray-900">10</div>
                         <div class="text-xs text-orange-600 font-bold mt-2">+8 vs Q3 2025</div>
                     </div>
-                     <div class="glass-panel p-6 rounded-2xl border-t-4 border-purple-500 text-center">
+                      <div class="glass-panel p-6 rounded-2xl border-t-4 border-purple-500 text-center">
                         <div class="text-xs text-gray-500 uppercase tracking-wide font-bold mb-1">Key Roles at Risk</div>
                         <div class="text-4xl font-extrabold text-gray-900">0</div>
                         <div class="text-xs text-purple-600 font-bold mt-2">3 critical monitored</div>
@@ -581,7 +552,7 @@
         </div>
 
         <div class="slide">
-             <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+             <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-2 text-gray-900 stagger-item">Promotion Readiness</h2>
                 <p class="text-xl text-skoda-green mb-8 stagger-item">Succession Pipeline & Planning</p>
 
@@ -642,7 +613,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-2 text-gray-900 stagger-item">Employee View</h2>
                 <p class="text-xl text-skoda-green mb-8 stagger-item">My Career Dashboard - Level 4 Senior</p>
                 
@@ -740,7 +711,7 @@
         </div>
 
         <div class="slide">
-             <div class="max-w-7xl mx-auto w-full h-full flex items-center space-x-8">
+             <div class="max-w-7xl mx-auto w-full flex items-center space-x-8">
                 <div class="w-1/2 stagger-item">
                     <h2 class="text-5xl font-bold text-gray-900 mb-4">AI Assistant</h2>
                     <p class="text-xl text-skoda-green mb-8">Integrated Intelligence for All Users</p>
@@ -800,7 +771,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-3 text-gray-900 stagger-item">Evaluation Criteria</h2>
                 <p class="text-2xl text-skoda-green mb-8 stagger-item">1. Use of AI / Data Logic</p>
                 
@@ -853,7 +824,7 @@
         </div>
 
          <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-3 text-gray-900 stagger-item">Why We Stand Out</h2>
                 <p class="text-xl text-skoda-green mb-8 stagger-item">2. Solution Efficiency & 3. Creativity</p>
                 
@@ -928,7 +899,7 @@
         </div>
 
          <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-3 text-gray-900 stagger-item">Technical Excellence</h2>
                 <p class="text-xl text-skoda-green mb-8 stagger-item">4. Security & Data Accuracy | 6. Technical Quality</p>
                 
@@ -995,18 +966,18 @@
                           <div>
                              <div class="text-4xl font-bold text-green-400">&lt;2s</div>
                              <div class="text-sm text-gray-400">Query Response</div>
-                         </div>
+                          </div>
                           <div>
                              <div class="text-4xl font-bold text-green-400">24h</div>
                              <div class="text-sm text-gray-400">Dev Time</div>
-                         </div>
+                          </div>
                      </div>
                 </div>
             </div>
         </div>
 
         <div class="slide">
-             <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+             <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                 <h2 class="text-4xl font-bold mb-8 text-gray-900 stagger-item">Design Excellence</h2>
                 <p class="text-xl text-skoda-green mb-8 stagger-item">5. Presentation and Clarity</p>
                  <div class="grid grid-cols-2 gap-8 stagger-item">
@@ -1037,7 +1008,7 @@
         </div>
 
         <div class="slide">
-            <div class="max-w-7xl mx-auto w-full h-full flex flex-col justify-center">
+            <div class="max-w-7xl mx-auto w-full flex flex-col justify-center">
                  <h2 class="text-5xl font-bold text-center mb-4 text-gray-900 stagger-item">Impact for ŠKODA</h2>
                  <p class="text-2xl text-center text-skoda-green mb-12 stagger-item">Transforming HR from Reactive to Predictive</p>
                  
@@ -1121,23 +1092,16 @@
 
     </div>
 
-    <div class="fixed bottom-6 right-8 flex items-center space-x-4 z-50">
-        <button id="prevBtn" class="bg-white/80 backdrop-blur hover:bg-white text-gray-800 w-14 h-14 rounded-full shadow-xl transition flex items-center justify-center border border-gray-200 hover:scale-105 active:scale-95 group">
-            <svg class="w-6 h-6 text-gray-600 group-hover:text-skoda-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        </button>
+    <div class="fixed bottom-6 right-8 z-50">
         <div class="bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-xl font-mono text-lg text-gray-700 border border-gray-200 font-bold">
             <span id="currentSlide">1</span> / <span id="totalSlides">16</span>
         </div>
-        <button id="nextBtn" class="bg-gradient-to-r from-skoda-green to-skoda-dark text-white w-14 h-14 rounded-full shadow-xl transition flex items-center justify-center hover:scale-105 active:scale-95">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </button>
     </div>
 
     <script>
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
-        const progress = document.getElementById('progress');
         const currentSlideEl = document.getElementById('currentSlide');
         
         document.getElementById('totalSlides').textContent = totalSlides;
@@ -1145,8 +1109,10 @@
         function updateSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             slides[index].classList.add('active');
+            
             currentSlideEl.textContent = index + 1;
-            progress.style.width = ((index + 1) / totalSlides) * 100 + '%';
+            
+            slides[index].scrollTop = 0;
         }
         
         function nextSlide() {
@@ -1159,14 +1125,13 @@
             updateSlide(currentSlideIndex);
         }
         
-        document.getElementById('nextBtn').addEventListener('click', nextSlide);
-        document.getElementById('prevBtn').addEventListener('click', prevSlide);
-        
+        // Sadece Ok Tuşları
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowRight') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
         });
 
+        // Başlangıç
         updateSlide(0);
     </script>
 </body>
