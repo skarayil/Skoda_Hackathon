@@ -21,7 +21,7 @@
 
 Hackathon finalinde jüriye sunduğumuz ve **birinciliği getiren** interaktif sunumu görüntüleyebilirsiniz:
 
-👉 **[📽️ Interaktif Sunumu Aç](https://skarayil.github.io/Skoda_Hackathon)**
+👉 **[📽️ Interaktif Sunumu Aç](https://skarayil.github.io/presentation.html)**
 
 > *16 slaytlık sunumumuz, projenin tüm yönlerini detaylı grafikler ve animasyonlarla anlatıyor. Dosyayı tarayıcınızda açarak ok tuşları veya butonlarla gezinebilirsiniz.*
 
