@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
-    base: '/skoda/',
+    base: '/Skoda_Hackathon/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

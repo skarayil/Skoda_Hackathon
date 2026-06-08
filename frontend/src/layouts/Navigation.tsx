@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, UserCircle, Target, TrendingUp, Sparkles, Settings } from "lucide-react";
+import { LayoutDashboard, Users, UserCircle, Target, TrendingUp, Sparkles, Settings, Presentation } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Avatar, AvatarFallback } from "../components/ui/avatar";
 import { Badge } from "../components/ui/badge";
@@ -16,6 +16,7 @@ export function Navigation({ activeView, onViewChange }: NavigationProps) {
     { id: "succession", icon: Target, label: "Succession & Readiness" },
     { id: "analytics", icon: TrendingUp, label: "HR Analytics" },
     { id: "ai", icon: Sparkles, label: "AI Assistant" },
+    { id: "presentation", icon: Presentation, label: "Project Presentation", isExternal: true, href: "/Skoda_Hackathon/presentation.html" },
   ];
 
   return (
@@ -37,6 +38,21 @@ export function Navigation({ activeView, onViewChange }: NavigationProps) {
       <nav className="flex-1 p-4 space-y-1">
         {navItems.map((item) => {
           const Icon = item.icon;
+          if (item.isExternal) {
+            return (
+              <a
+                key={item.id}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-[hsl(var(--skoda-gray-300))] hover:bg-[hsl(var(--skoda-navy-light))] hover:text-white"
+              >
+                <Icon className="w-5 h-5" />
+                <span className="text-sm">{item.label}</span>
+              </a>
+            );
+          }
+          
           const isActive = activeView === item.id;
           return (
             <button
