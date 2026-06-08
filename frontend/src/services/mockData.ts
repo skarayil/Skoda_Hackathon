@@ -124,6 +124,34 @@ export const mockDataMap: Record<string, any> = {
       { id: "E2", name: "Bob", role: "Designer" }
     ]
   },
+  '/employee-intel': {
+    employee_id: "EMP123",
+    summary: "John Doe is a Senior Engineer with a focus on web development.",
+    career_trajectory: "Senior Engineer → Engineering Manager",
+    readiness_score: 85,
+    next_role_readiness: "L4 → L5 Ready",
+    detected_language: "en",
+    unified_score: validUnifiedScore
+  },
+  '/skills/analysis': {
+    employee_id: "EMP123",
+    analysis_json: {
+      current_skills: ["React", "Python", "AWS", "TypeScript"],
+      missing_skills: ["Kubernetes", "GraphQL"],
+      recommendation: "Focus on Kubernetes for the next quarter to improve cloud native readiness."
+    },
+    unified_score: validUnifiedScore
+  },
+  '/recommendations': {
+    recommendations: [
+      { title: "Advanced Kubernetes", type: "Course", description: "Learn container orchestration.", url: "#" },
+      { title: "GraphQL API Design", type: "Article", description: "Best practices for GraphQL.", url: "#" }
+    ]
+  },
+  '/learning-history': [
+    { course_name: "React Advanced Patterns", completion_date: "2024-05-12", status: "completed" },
+    { course_name: "AWS Solutions Architect", completion_date: "2024-01-20", status: "completed" }
+  ],
   '/ai/ask': {
     answer: "Based on the team's skills, you should focus on AWS training. There is a predicted shortage in Q3."
   }
