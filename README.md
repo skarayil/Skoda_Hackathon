@@ -11,6 +11,12 @@
 
 *ŠKODA Auto için geliştirilen bu platform, 2,847 çalışan verisini işleyerek organizasyonun yetenek yönetimini 6-12 ay önceden tahmin edebilen, yapay zeka destekli bir karar destek sistemine dönüştürüyor.*
 
+<br/>
+
+### 🌐 [Canlı Demo → skoda-ai-skill-coach](https://skarayil.github.io/Skoda_Hackathon/)
+
+<br/>
+
 [📊 Sunum](#-proje-sunumu) • [🎯 Problem](#-çözdüğümüz-problem) • [💡 Çözüm](#-sağladığımız-çözüm) • [🏗️ Mimari](#️-teknik-mimari) • [🎨 Arayüzler](#-kullanıcı-arayüzleri) • [📈 Etki](#-yaratılan-etki)
 
 </div>
