@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Škoda Enterprise Color System */
+    --skoda-green: 142 72% 29%;
+    --skoda-green-light: 142 50% 45%;
+    --skoda-green-dark: 142 72% 20%;
+    --skoda-navy: 210 40% 12%;
+    --skoda-navy-light: 210 30% 20%;
+    --skoda-navy-lighter: 210 20% 30%;
+    --skoda-gray-50: 210 20% 98%;
+    --skoda-gray-100: 210 15% 95%;
+    --skoda-gray-200: 210 15% 90%;
+    --skoda-gray-300: 210 10% 80%;
+    --skoda-gray-400: 210 8% 60%;
+    --skoda-gray-500: 210 8% 45%;
+    --skoda-gray-600: 210 10% 30%;
+    --skoda-gray-700: 210 15% 20%;
+    --skoda-gray-800: 210 20% 15%;
+    
+    --background: 0 0% 100%;
+    --foreground: var(--skoda-navy);
+
+    --card: 0 0% 100%;
+    --card-foreground: var(--skoda-navy);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--skoda-navy);
+
+    --primary: var(--skoda-green);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--skoda-navy-light);
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: var(--skoda-gray-100);
+    --muted-foreground: var(--skoda-gray-600);
+
+    --accent: var(--skoda-green-light);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--skoda-gray-200);
+    --input: var(--skoda-gray-200);
+    --ring: var(--skoda-green);
+
+    --radius: 0.375rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[hsl(var(--skoda-gray-50))] text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  small {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
