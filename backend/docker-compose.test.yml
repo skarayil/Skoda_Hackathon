@@ -1,0 +1,57 @@
+version: '3.8'
+
+# Test-specific docker-compose configuration
+# Use this for running tests in Docker
+
+services:
+  backend-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: skoda-skill-coach-backend-test
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://swx_user:testpass@db-test:5432/swx_db_test
+      - DB_HOST=db-test
+      - DB_PORT=5432
+      - DB_USER=swx_user
+      - DB_PASSWORD=testpass
+      - DB_NAME=swx_db_test
+      - DATABASE_TYPE=postgres
+      - DOCKERIZED=true
+      - ENVIRONMENT=test
+      - LOG_LEVEL=DEBUG
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    depends_on:
+      - db-test
+    command: >
+      sh -c "
+        echo 'Waiting for database...' &&
+        sleep 5 &&
+        alembic upgrade head &&
+        pytest src/tests/ -v --asyncio-mode=auto
+      "
+    networks:
+      - test-network
+
+  db-test:
+    image: postgres:15-alpine
+    container_name: skoda-skill-coach-db-test
+    environment:
+      - POSTGRES_USER=swx_user
+      - POSTGRES_PASSWORD=testpass
+      - POSTGRES_DB=swx_db_test
+    volumes:
+      - test_pgdata:/var/lib/postgresql/data
+    networks:
+      - test-network
+
+volumes:
+  test_pgdata:
+    driver: local
+
+networks:
+  test-network:
+    driver: bridge
+

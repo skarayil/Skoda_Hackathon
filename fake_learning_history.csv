@@ -1,0 +1,394 @@
+employee_id,course_name,completion_date,status,provider
+EMP-001,Machine Learning Basics,2024-11-21,In Progress,Coursera
+EMP-001,Test Automation,2025-04-28,In Progress,External
+EMP-001,Cloud Architecture,2025-09-14,Completed,Internal
+EMP-001,Docker & Kubernetes Fundamentals,2025-01-12,Completed,Škoda Academy
+EMP-001,Business Intelligence,2025-03-05,Completed,Internal
+EMP-001,Advanced Excel,2025-08-11,In Progress,Udemy
+EMP-001,Pokročilý Python,2025-02-06,Completed,Coursera
+EMP-001,Datová analýza,2024-11-23,Completed,Internal
+EMP-002,DevOps Best Practices,2024-12-23,Completed,Škoda Academy
+EMP-002,Business Intelligence,2025-08-10,Completed,Škoda Academy
+EMP-002,Vedení týmů,2024-12-04,In Progress,Internal
+EMP-003,Cloud Architecture,2025-02-02,In Progress,Škoda Academy
+EMP-003,Pokročilý Python,2025-02-06,In Progress,Škoda Academy
+EMP-003,Advanced Python Programming,2025-03-07,In Progress,Škoda Academy
+EMP-003,Agilní metodiky,2025-06-16,In Progress,Coursera
+EMP-003,Machine Learning Basics,2024-12-10,In Progress,Coursera
+EMP-003,Business Intelligence,2024-12-26,Completed,Udemy
+EMP-004,Docker & Kubernetes Fundamentals,2025-11-13,In Progress,Škoda Academy
+EMP-004,Cloud Architecture,2025-02-28,Completed,Škoda Academy
+EMP-004,Datová analýza,2025-08-22,In Progress,Coursera
+EMP-004,Microservices Architecture,2025-03-24,Completed,External
+EMP-004,Agilní metodiky,2025-03-15,Completed,External
+EMP-004,Vedení týmů,2025-05-30,Completed,Udemy
+EMP-005,Základy Dockeru,2024-12-15,In Progress,Udemy
+EMP-005,SQL Mastery,2025-05-01,Completed,Coursera
+EMP-005,Microservices Architecture,2025-11-08,Completed,External
+EMP-006,Agilní metodiky,2025-05-19,In Progress,Internal
+EMP-006,Advanced Python Programming,2025-03-12,In Progress,Coursera
+EMP-007,Advanced Excel,2025-09-08,Completed,Udemy
+EMP-007,Advanced Excel,2025-02-01,Completed,Internal
+EMP-007,Advanced Excel,2025-09-01,Completed,Udemy
+EMP-007,Cloud Architecture,2025-08-13,Completed,Internal
+EMP-007,Microservices Architecture,2025-05-04,Completed,External
+EMP-007,Machine Learning Basics,2025-03-17,In Progress,Internal
+EMP-007,Datová analýza,2025-09-22,Completed,Udemy
+EMP-008,React Advanced Patterns,2025-06-15,Completed,Udemy
+EMP-008,Microservices Architecture,2025-07-12,In Progress,Coursera
+EMP-008,Základy Dockeru,2024-12-20,Completed,External
+EMP-008,Leadership Development,2025-06-27,Completed,External
+EMP-008,Docker & Kubernetes Fundamentals,2025-04-16,In Progress,Udemy
+EMP-008,Vedení týmů,2025-08-08,Completed,Udemy
+EMP-008,DevOps Best Practices,2025-03-08,In Progress,External
+EMP-009,Docker & Kubernetes Fundamentals,2024-11-30,In Progress,Internal
+EMP-009,Microservices Architecture,2025-06-04,Completed,Internal
+EMP-009,Advanced Excel,2025-02-08,Completed,Internal
+EMP-009,Microservices Architecture,2025-03-21,In Progress,Coursera
+EMP-009,Vedení týmů,2025-02-09,Completed,Udemy
+EMP-009,Cloud Architecture,2025-03-01,Completed,Coursera
+EMP-009,Docker & Kubernetes Fundamentals,2025-05-04,Completed,Internal
+EMP-010,Machine Learning Basics,2025-09-06,Completed,External
+EMP-010,Agile Project Management,2025-03-11,Completed,Udemy
+EMP-010,Agile Project Management,2025-01-01,In Progress,Internal
+EMP-011,Agilní metodiky,2025-07-23,Completed,External
+EMP-011,Data Science Bootcamp,2025-04-08,In Progress,Coursera
+EMP-011,Pokročilý Python,2025-07-30,Completed,External
+EMP-011,Advanced Python Programming,2025-06-10,Completed,External
+EMP-011,Základy Dockeru,2025-05-02,In Progress,Internal
+EMP-011,Communication Skills,2025-03-27,Completed,Škoda Academy
+EMP-012,Cloud Architecture,2025-04-28,In Progress,Udemy
+EMP-012,Agilní metodiky,2025-01-07,In Progress,External
+EMP-012,Pokročilý Python,2025-05-01,In Progress,Internal
+EMP-013,Advanced Excel,2025-10-12,Completed,Coursera
+EMP-013,Agilní metodiky,2025-07-10,Completed,Coursera
+EMP-013,Communication Skills,2025-03-13,In Progress,Internal
+EMP-013,Microservices Architecture,2025-05-02,Completed,Internal
+EMP-013,Docker & Kubernetes Fundamentals,2024-12-07,Completed,Udemy
+EMP-013,Microservices Architecture,2025-04-23,In Progress,Udemy
+EMP-014,Vedení týmů,2024-12-03,Completed,Udemy
+EMP-014,DevOps Best Practices,2025-09-06,Completed,External
+EMP-014,SQL Mastery,2025-07-13,In Progress,Udemy
+EMP-015,Pokročilý Python,2025-04-14,Completed,Škoda Academy
+EMP-015,SQL Mastery,2025-03-01,In Progress,Internal
+EMP-015,Business Intelligence,2025-02-10,In Progress,External
+EMP-015,Vedení týmů,2025-10-20,Completed,External
+EMP-015,Business Intelligence,2025-03-26,Completed,Udemy
+EMP-015,Microservices Architecture,2025-04-20,Completed,External
+EMP-016,Test Automation,2025-01-07,Completed,Internal
+EMP-016,Cloud Architecture,2025-02-21,Completed,Internal
+EMP-016,Communication Skills,2025-04-24,In Progress,Internal
+EMP-016,Advanced Excel,2025-05-19,In Progress,External
+EMP-016,Docker & Kubernetes Fundamentals,2025-03-18,In Progress,External
+EMP-016,Business Intelligence,2024-11-20,Completed,Coursera
+EMP-016,React Advanced Patterns,2025-03-30,In Progress,Internal
+EMP-017,Advanced Python Programming,2025-08-28,In Progress,Coursera
+EMP-017,React Advanced Patterns,2025-05-29,Completed,Internal
+EMP-017,Agilní metodiky,2025-09-15,In Progress,External
+EMP-017,Docker & Kubernetes Fundamentals,2025-10-05,In Progress,Udemy
+EMP-018,Data Science Bootcamp,2025-07-13,Completed,Internal
+EMP-018,SQL Mastery,2025-02-19,Completed,Internal
+EMP-018,Datová analýza,2025-06-11,In Progress,Internal
+EMP-018,DevOps Best Practices,2025-07-09,Completed,Udemy
+EMP-019,Data Science Bootcamp,2024-11-27,Completed,External
+EMP-019,Test Automation,2024-12-11,Completed,Coursera
+EMP-019,Test Automation,2025-01-09,Completed,Internal
+EMP-019,React Advanced Patterns,2025-11-15,Completed,Coursera
+EMP-019,Advanced Excel,2025-02-27,Completed,Coursera
+EMP-019,Machine Learning Basics,2025-01-14,In Progress,Udemy
+EMP-020,React Advanced Patterns,2025-11-05,Completed,Škoda Academy
+EMP-020,DevOps Best Practices,2025-05-19,In Progress,Udemy
+EMP-020,Machine Learning Basics,2025-07-14,Completed,Udemy
+EMP-021,Pokročilý Python,2024-11-28,Completed,External
+EMP-021,Vedení týmů,2025-07-16,Completed,Coursera
+EMP-021,Základy Dockeru,2024-11-28,In Progress,Internal
+EMP-021,DevOps Best Practices,2025-07-14,Completed,Udemy
+EMP-021,Advanced Excel,2025-01-01,Completed,Škoda Academy
+EMP-021,Data Science Bootcamp,2025-06-12,Completed,Udemy
+EMP-021,Business Intelligence,2025-06-01,Completed,External
+EMP-021,Vedení týmů,2025-06-15,In Progress,Internal
+EMP-022,Základy Dockeru,2025-07-31,In Progress,Udemy
+EMP-022,Agilní metodiky,2025-08-24,Completed,Škoda Academy
+EMP-022,Leadership Development,2025-03-27,Completed,Škoda Academy
+EMP-022,Advanced Python Programming,2024-11-25,Completed,External
+EMP-022,Základy Dockeru,2025-10-14,Completed,Coursera
+EMP-023,Agile Project Management,2025-03-12,Completed,Coursera
+EMP-023,Business Intelligence,2025-08-04,In Progress,Škoda Academy
+EMP-023,Leadership Development,2025-01-13,In Progress,Škoda Academy
+EMP-023,Communication Skills,2025-02-19,In Progress,Coursera
+EMP-024,Business Intelligence,2025-07-15,Completed,Udemy
+EMP-024,DevOps Best Practices,2025-03-27,Completed,External
+EMP-024,Test Automation,2025-06-23,In Progress,Škoda Academy
+EMP-024,Data Science Bootcamp,2025-08-14,In Progress,Coursera
+EMP-024,Leadership Development,2024-11-29,Completed,Internal
+EMP-025,Business Intelligence,2025-10-21,Completed,Coursera
+EMP-025,Machine Learning Basics,2025-07-14,Completed,Coursera
+EMP-025,Docker & Kubernetes Fundamentals,2025-03-28,Completed,Škoda Academy
+EMP-025,Docker & Kubernetes Fundamentals,2025-10-30,Completed,Coursera
+EMP-025,Pokročilý Python,2025-07-12,Completed,Škoda Academy
+EMP-025,Test Automation,2025-01-13,In Progress,Škoda Academy
+EMP-025,Advanced Python Programming,2025-08-14,Completed,External
+EMP-025,DevOps Best Practices,2025-07-09,Completed,Internal
+EMP-026,Test Automation,2024-12-29,Completed,Škoda Academy
+EMP-026,SQL Mastery,2025-07-26,Completed,Internal
+EMP-026,Agile Project Management,2025-06-28,In Progress,Škoda Academy
+EMP-026,Základy Dockeru,2025-03-05,In Progress,Udemy
+EMP-026,Advanced Excel,2025-01-12,Completed,Coursera
+EMP-026,Agile Project Management,2025-08-11,In Progress,Udemy
+EMP-026,Test Automation,2025-10-22,Completed,Škoda Academy
+EMP-027,Leadership Development,2025-08-03,In Progress,Škoda Academy
+EMP-027,Docker & Kubernetes Fundamentals,2025-07-07,Completed,Škoda Academy
+EMP-027,Communication Skills,2025-03-02,Completed,Coursera
+EMP-027,Business Intelligence,2025-06-14,In Progress,External
+EMP-027,Data Science Bootcamp,2025-08-10,Completed,Udemy
+EMP-027,Docker & Kubernetes Fundamentals,2025-04-29,In Progress,Coursera
+EMP-027,Microservices Architecture,2024-11-21,Completed,Škoda Academy
+EMP-027,Business Intelligence,2025-05-28,Completed,Internal
+EMP-028,Pokročilý Python,2025-08-25,In Progress,Udemy
+EMP-028,Pokročilý Python,2025-06-24,In Progress,Internal
+EMP-028,Machine Learning Basics,2025-05-30,Completed,Internal
+EMP-029,Agile Project Management,2025-04-04,Completed,Škoda Academy
+EMP-029,Vedení týmů,2025-09-17,Completed,Coursera
+EMP-029,Vedení týmů,2025-04-26,In Progress,Udemy
+EMP-030,Leadership Development,2025-06-06,Completed,Udemy
+EMP-030,Vedení týmů,2025-08-17,Completed,Internal
+EMP-030,SQL Mastery,2025-07-04,Completed,Coursera
+EMP-030,Docker & Kubernetes Fundamentals,2025-11-13,Completed,Internal
+EMP-030,Microservices Architecture,2025-01-16,In Progress,Škoda Academy
+EMP-030,Vedení týmů,2025-07-17,In Progress,Udemy
+EMP-030,SQL Mastery,2025-05-05,Completed,Coursera
+EMP-031,React Advanced Patterns,2025-11-07,Completed,External
+EMP-031,Agile Project Management,2025-03-31,In Progress,Internal
+EMP-031,Business Intelligence,2025-05-16,Completed,External
+EMP-031,DevOps Best Practices,2025-06-11,Completed,Coursera
+EMP-032,Datová analýza,2025-02-21,Completed,External
+EMP-032,Základy Dockeru,2025-08-31,Completed,External
+EMP-032,Leadership Development,2025-05-04,In Progress,Škoda Academy
+EMP-033,Advanced Python Programming,2025-02-12,Completed,Coursera
+EMP-033,Základy Dockeru,2024-11-29,In Progress,Udemy
+EMP-033,Agilní metodiky,2025-07-02,In Progress,Coursera
+EMP-033,Test Automation,2025-01-28,Completed,External
+EMP-033,DevOps Best Practices,2025-03-24,Completed,Internal
+EMP-034,Pokročilý Python,2025-03-20,Completed,Udemy
+EMP-034,Data Science Bootcamp,2025-02-14,Completed,Škoda Academy
+EMP-034,Microservices Architecture,2025-04-11,Completed,Škoda Academy
+EMP-034,SQL Mastery,2025-06-02,In Progress,External
+EMP-034,Business Intelligence,2025-06-18,In Progress,Škoda Academy
+EMP-035,Data Science Bootcamp,2025-02-12,Completed,Škoda Academy
+EMP-035,Data Science Bootcamp,2025-05-27,Completed,External
+EMP-035,DevOps Best Practices,2025-04-20,Completed,Udemy
+EMP-035,Základy Dockeru,2025-05-22,In Progress,Coursera
+EMP-035,Communication Skills,2025-03-01,Completed,Internal
+EMP-036,Vedení týmů,2025-03-23,Completed,Škoda Academy
+EMP-036,Advanced Excel,2025-06-18,Completed,Internal
+EMP-036,Pokročilý Python,2025-01-03,Completed,External
+EMP-036,Agile Project Management,2025-05-26,Completed,Udemy
+EMP-036,Advanced Python Programming,2025-01-10,Completed,Internal
+EMP-036,Agile Project Management,2025-05-19,Completed,External
+EMP-037,React Advanced Patterns,2025-04-29,Completed,Škoda Academy
+EMP-037,Business Intelligence,2025-04-20,In Progress,External
+EMP-038,Cloud Architecture,2025-08-13,Completed,Udemy
+EMP-038,Agile Project Management,2025-03-27,Completed,External
+EMP-039,Advanced Excel,2025-03-23,Completed,External
+EMP-039,Test Automation,2025-11-18,Completed,Škoda Academy
+EMP-039,Microservices Architecture,2025-10-18,In Progress,Coursera
+EMP-039,Pokročilý Python,2025-05-22,In Progress,Udemy
+EMP-039,Business Intelligence,2025-07-25,In Progress,External
+EMP-039,Microservices Architecture,2025-01-19,Completed,Coursera
+EMP-040,Advanced Python Programming,2025-08-31,Completed,External
+EMP-040,Machine Learning Basics,2025-04-08,In Progress,Coursera
+EMP-040,Agile Project Management,2025-10-10,Completed,Udemy
+EMP-040,Advanced Excel,2024-12-28,Completed,Škoda Academy
+EMP-041,Agile Project Management,2025-09-24,In Progress,Internal
+EMP-041,Communication Skills,2025-05-03,In Progress,Udemy
+EMP-041,Pokročilý Python,2025-03-26,In Progress,External
+EMP-041,Pokročilý Python,2025-05-28,Completed,Udemy
+EMP-042,Základy Dockeru,2025-05-25,Completed,External
+EMP-042,Vedení týmů,2025-02-04,Completed,Internal
+EMP-042,Advanced Excel,2025-10-14,In Progress,Coursera
+EMP-042,Agile Project Management,2025-10-25,Completed,Coursera
+EMP-042,React Advanced Patterns,2025-09-05,Completed,Internal
+EMP-042,DevOps Best Practices,2025-05-13,In Progress,Coursera
+EMP-042,Základy Dockeru,2025-07-12,Completed,External
+EMP-043,Advanced Python Programming,2024-11-19,In Progress,Internal
+EMP-043,Agile Project Management,2025-03-18,In Progress,Škoda Academy
+EMP-043,DevOps Best Practices,2024-12-29,In Progress,Internal
+EMP-043,Agile Project Management,2025-08-11,Completed,Udemy
+EMP-043,SQL Mastery,2025-10-19,Completed,Škoda Academy
+EMP-043,Agilní metodiky,2025-11-04,Completed,Coursera
+EMP-043,Základy Dockeru,2025-09-13,Completed,External
+EMP-044,Pokročilý Python,2025-04-22,In Progress,External
+EMP-044,Cloud Architecture,2025-09-21,In Progress,Internal
+EMP-044,React Advanced Patterns,2025-07-09,Completed,Udemy
+EMP-044,Machine Learning Basics,2025-11-13,Completed,External
+EMP-045,Business Intelligence,2025-07-10,Completed,External
+EMP-045,Test Automation,2025-04-22,Completed,Udemy
+EMP-045,Test Automation,2025-11-07,In Progress,Škoda Academy
+EMP-045,Agile Project Management,2025-04-06,Completed,Internal
+EMP-045,Microservices Architecture,2025-04-14,Completed,Coursera
+EMP-045,Communication Skills,2025-06-19,In Progress,Internal
+EMP-046,Communication Skills,2025-06-25,Completed,Coursera
+EMP-046,Test Automation,2025-08-08,Completed,External
+EMP-046,DevOps Best Practices,2025-02-06,Completed,Udemy
+EMP-047,Communication Skills,2025-04-05,Completed,Coursera
+EMP-047,Docker & Kubernetes Fundamentals,2025-09-01,In Progress,Internal
+EMP-047,Cloud Architecture,2024-12-14,In Progress,External
+EMP-047,Agile Project Management,2025-05-19,Completed,Internal
+EMP-047,Agilní metodiky,2025-06-23,Completed,Internal
+EMP-047,DevOps Best Practices,2025-06-30,Completed,Coursera
+EMP-047,Cloud Architecture,2024-12-09,Completed,Udemy
+EMP-048,DevOps Best Practices,2025-03-18,In Progress,Coursera
+EMP-048,React Advanced Patterns,2025-02-13,In Progress,Udemy
+EMP-049,DevOps Best Practices,2025-06-24,Completed,Udemy
+EMP-049,Leadership Development,2024-12-03,Completed,Škoda Academy
+EMP-049,SQL Mastery,2025-10-09,Completed,Internal
+EMP-049,Advanced Python Programming,2025-07-09,Completed,Škoda Academy
+EMP-049,Machine Learning Basics,2025-07-09,Completed,Internal
+EMP-049,Leadership Development,2025-02-05,Completed,Coursera
+EMP-049,SQL Mastery,2025-05-17,Completed,Coursera
+EMP-049,Docker & Kubernetes Fundamentals,2025-02-27,Completed,Internal
+EMP-050,Vedení týmů,2024-12-18,Completed,Udemy
+EMP-050,Data Science Bootcamp,2025-04-14,Completed,Škoda Academy
+EMP-050,Datová analýza,2025-06-18,Completed,Internal
+EMP-050,Vedení týmů,2025-05-22,In Progress,Udemy
+EMP-050,DevOps Best Practices,2025-05-20,Completed,Coursera
+EMP-050,Vedení týmů,2025-06-15,Completed,Internal
+EMP-051,Agile Project Management,2025-07-15,In Progress,Škoda Academy
+EMP-051,SQL Mastery,2025-10-09,In Progress,Udemy
+EMP-051,Advanced Python Programming,2024-11-29,Completed,Škoda Academy
+EMP-051,Data Science Bootcamp,2025-05-04,In Progress,Udemy
+EMP-051,Cloud Architecture,2025-04-09,Completed,Škoda Academy
+EMP-052,Docker & Kubernetes Fundamentals,2025-05-24,Completed,Udemy
+EMP-052,React Advanced Patterns,2025-11-01,Completed,Udemy
+EMP-052,Data Science Bootcamp,2025-06-30,Completed,Coursera
+EMP-052,Vedení týmů,2024-12-31,Completed,External
+EMP-052,Data Science Bootcamp,2025-08-15,Completed,Udemy
+EMP-053,Cloud Architecture,2025-06-11,Completed,Škoda Academy
+EMP-053,React Advanced Patterns,2025-07-16,In Progress,Škoda Academy
+EMP-053,Communication Skills,2025-05-31,Completed,Škoda Academy
+EMP-053,Vedení týmů,2025-09-29,In Progress,External
+EMP-054,Advanced Excel,2025-05-01,Completed,Škoda Academy
+EMP-054,Microservices Architecture,2025-06-24,In Progress,External
+EMP-055,Agilní metodiky,2025-03-01,Completed,Udemy
+EMP-055,Cloud Architecture,2024-12-25,In Progress,Škoda Academy
+EMP-055,Machine Learning Basics,2025-03-18,Completed,Internal
+EMP-056,React Advanced Patterns,2025-01-16,Completed,Coursera
+EMP-056,Business Intelligence,2025-01-29,In Progress,Coursera
+EMP-056,DevOps Best Practices,2025-03-28,Completed,Udemy
+EMP-057,Test Automation,2025-10-08,Completed,Škoda Academy
+EMP-057,Cloud Architecture,2025-10-16,In Progress,Škoda Academy
+EMP-057,Test Automation,2025-09-04,Completed,External
+EMP-057,Základy Dockeru,2025-11-04,In Progress,Škoda Academy
+EMP-057,Advanced Excel,2025-05-30,Completed,Škoda Academy
+EMP-058,Agilní metodiky,2025-09-14,Completed,Udemy
+EMP-058,Základy Dockeru,2025-02-12,Completed,Udemy
+EMP-058,DevOps Best Practices,2025-09-08,In Progress,Škoda Academy
+EMP-058,Cloud Architecture,2025-01-16,Completed,Škoda Academy
+EMP-058,Business Intelligence,2025-06-02,Completed,Coursera
+EMP-058,Pokročilý Python,2025-09-20,Completed,Coursera
+EMP-058,Základy Dockeru,2025-05-15,In Progress,Internal
+EMP-058,Test Automation,2025-04-16,In Progress,Internal
+EMP-059,Leadership Development,2025-07-13,Completed,Škoda Academy
+EMP-059,Business Intelligence,2025-04-23,Completed,External
+EMP-059,Cloud Architecture,2025-01-16,In Progress,External
+EMP-059,SQL Mastery,2025-02-15,In Progress,Škoda Academy
+EMP-059,Communication Skills,2024-12-09,Completed,Udemy
+EMP-059,Advanced Excel,2025-05-14,In Progress,Coursera
+EMP-059,Cloud Architecture,2025-08-05,Completed,Coursera
+EMP-059,Cloud Architecture,2025-02-13,Completed,Škoda Academy
+EMP-060,Základy Dockeru,2024-12-08,In Progress,Škoda Academy
+EMP-060,Business Intelligence,2025-01-12,Completed,Škoda Academy
+EMP-060,Agilní metodiky,2024-12-02,In Progress,Coursera
+EMP-060,Agilní metodiky,2025-03-20,In Progress,Škoda Academy
+EMP-060,DevOps Best Practices,2025-04-25,Completed,Udemy
+EMP-061,Microservices Architecture,2025-06-19,In Progress,Internal
+EMP-061,Agile Project Management,2025-02-06,Completed,Škoda Academy
+EMP-061,React Advanced Patterns,2024-12-04,Completed,External
+EMP-061,Vedení týmů,2025-01-09,Completed,Udemy
+EMP-062,Data Science Bootcamp,2025-01-15,Completed,Škoda Academy
+EMP-062,Docker & Kubernetes Fundamentals,2024-12-31,Completed,Škoda Academy
+EMP-062,Test Automation,2024-11-21,Completed,Internal
+EMP-062,Pokročilý Python,2025-02-08,Completed,External
+EMP-062,Cloud Architecture,2025-06-25,Completed,Coursera
+EMP-062,DevOps Best Practices,2025-10-18,In Progress,Coursera
+EMP-063,Agilní metodiky,2025-10-12,In Progress,Udemy
+EMP-063,DevOps Best Practices,2025-04-15,Completed,Škoda Academy
+EMP-063,Machine Learning Basics,2025-06-21,Completed,External
+EMP-064,Communication Skills,2025-11-12,Completed,Coursera
+EMP-064,DevOps Best Practices,2025-01-11,Completed,External
+EMP-064,Advanced Python Programming,2024-12-14,In Progress,Škoda Academy
+EMP-064,Leadership Development,2025-07-31,In Progress,Škoda Academy
+EMP-065,DevOps Best Practices,2025-04-21,In Progress,Coursera
+EMP-065,Základy Dockeru,2025-05-19,Completed,External
+EMP-065,Docker & Kubernetes Fundamentals,2025-07-07,In Progress,Udemy
+EMP-065,Docker & Kubernetes Fundamentals,2024-12-26,Completed,Udemy
+EMP-066,DevOps Best Practices,2025-10-16,Completed,External
+EMP-066,Cloud Architecture,2025-05-12,Completed,Internal
+EMP-066,Data Science Bootcamp,2024-11-26,In Progress,Coursera
+EMP-066,Docker & Kubernetes Fundamentals,2025-05-09,Completed,Internal
+EMP-067,Microservices Architecture,2025-09-19,In Progress,Škoda Academy
+EMP-067,Vedení týmů,2025-09-22,Completed,Coursera
+EMP-067,Microservices Architecture,2025-09-04,In Progress,Coursera
+EMP-067,Docker & Kubernetes Fundamentals,2025-01-31,Completed,External
+EMP-068,Agile Project Management,2025-08-23,Completed,External
+EMP-068,Advanced Excel,2025-04-06,Completed,External
+EMP-068,Základy Dockeru,2024-11-27,In Progress,Internal
+EMP-068,DevOps Best Practices,2025-09-30,Completed,External
+EMP-068,Datová analýza,2025-08-01,In Progress,Internal
+EMP-068,Základy Dockeru,2025-08-28,Completed,Škoda Academy
+EMP-068,Test Automation,2025-05-29,In Progress,Škoda Academy
+EMP-069,Business Intelligence,2025-03-28,Completed,Coursera
+EMP-069,Docker & Kubernetes Fundamentals,2025-10-16,Completed,Coursera
+EMP-070,Data Science Bootcamp,2025-01-07,Completed,Udemy
+EMP-070,Datová analýza,2025-07-19,Completed,External
+EMP-070,React Advanced Patterns,2025-06-25,In Progress,Internal
+EMP-070,Data Science Bootcamp,2025-02-02,Completed,Udemy
+EMP-070,Cloud Architecture,2025-04-26,Completed,Coursera
+EMP-070,Advanced Python Programming,2025-01-05,Completed,Internal
+EMP-070,Advanced Python Programming,2025-08-13,In Progress,Udemy
+EMP-070,Business Intelligence,2025-11-10,In Progress,External
+EMP-071,DevOps Best Practices,2025-02-23,In Progress,Internal
+EMP-071,Agile Project Management,2025-03-21,Completed,Škoda Academy
+EMP-071,SQL Mastery,2025-07-26,Completed,Coursera
+EMP-071,Docker & Kubernetes Fundamentals,2025-01-20,Completed,Škoda Academy
+EMP-071,Leadership Development,2024-12-07,Completed,Internal
+EMP-071,Leadership Development,2025-02-14,Completed,Škoda Academy
+EMP-072,Data Science Bootcamp,2025-01-02,Completed,External
+EMP-072,Data Science Bootcamp,2025-09-16,Completed,External
+EMP-073,Agile Project Management,2025-01-31,In Progress,External
+EMP-073,Test Automation,2025-05-13,Completed,External
+EMP-074,Test Automation,2025-05-31,In Progress,Škoda Academy
+EMP-074,DevOps Best Practices,2025-01-26,Completed,Škoda Academy
+EMP-074,Agile Project Management,2025-05-13,Completed,Internal
+EMP-074,Agilní metodiky,2025-02-13,Completed,Udemy
+EMP-074,Datová analýza,2025-02-12,Completed,Coursera
+EMP-074,Advanced Excel,2025-02-13,In Progress,External
+EMP-075,SQL Mastery,2025-01-20,In Progress,Coursera
+EMP-075,Základy Dockeru,2025-05-28,Completed,Udemy
+EMP-075,Agile Project Management,2025-05-26,In Progress,Coursera
+EMP-075,Machine Learning Basics,2025-07-16,Completed,Škoda Academy
+EMP-075,Cloud Architecture,2025-05-09,In Progress,Udemy
+EMP-075,Business Intelligence,2025-01-18,Completed,Internal
+EMP-075,Test Automation,2025-05-08,Completed,Škoda Academy
+EMP-075,Základy Dockeru,2025-05-30,Completed,Coursera
+EMP-076,Pokročilý Python,2025-09-14,Completed,Internal
+EMP-076,Docker & Kubernetes Fundamentals,2025-10-17,In Progress,External
+EMP-076,Machine Learning Basics,2025-04-30,In Progress,Coursera
+EMP-077,Vedení týmů,2025-08-14,Completed,Coursera
+EMP-077,Machine Learning Basics,2025-11-07,In Progress,Škoda Academy
+EMP-078,Pokročilý Python,2025-05-02,Completed,Coursera
+EMP-078,Vedení týmů,2025-06-20,Completed,Coursera
+EMP-078,DevOps Best Practices,2025-08-05,Completed,Coursera
+EMP-078,Business Intelligence,2025-03-31,Completed,Internal
+EMP-078,Machine Learning Basics,2025-04-01,Completed,Udemy
+EMP-078,Microservices Architecture,2025-06-29,Completed,Internal
+EMP-078,Agilní metodiky,2025-05-16,Completed,Internal
+EMP-079,Agilní metodiky,2025-07-03,Completed,Škoda Academy
+EMP-079,React Advanced Patterns,2025-09-21,Completed,Internal
+EMP-079,Základy Dockeru,2025-09-19,Completed,Internal
+EMP-079,Datová analýza,2025-06-11,Completed,Internal
+EMP-079,Agilní metodiky,2025-05-15,Completed,Internal
+EMP-079,Agile Project Management,2025-10-13,Completed,Udemy
+EMP-079,Základy Dockeru,2025-11-05,Completed,Internal
+EMP-080,Leadership Development,2024-12-04,Completed,Coursera
+EMP-080,Advanced Excel,2025-08-17,In Progress,Škoda Academy

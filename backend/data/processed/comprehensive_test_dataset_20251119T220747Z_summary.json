@@ -1,0 +1,12 @@
+{
+  "dataset_id": "4805504a-6f07-4404-b547-5134c07a1ff5",
+  "dataset_name": "comprehensive_test_dataset_20251119T220747Z",
+  "row_count": 100,
+  "column_count": 13,
+  "skill_fields": [
+    "skills"
+  ],
+  "is_skoda_format": false,
+  "data_quality_score": 100,
+  "generated_at": "2025-11-19T22:07:47.787643"
+}

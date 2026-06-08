@@ -1,0 +1,179 @@
+# Full-Stack Docker Compose for ŠKODA AI Skill Coach
+# Includes: Backend (FastAPI), Frontend (Vite/React), PostgreSQL
+# Uses docker compose (v2) - no version needed
+
+services:
+  # ============================================================================
+  # PostgreSQL Database - Async-ready
+  # ============================================================================
+  db:
+    image: postgres:15-alpine
+    container_name: skoda-skill-coach-db
+    environment:
+      - POSTGRES_USER=swx_user
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_DB=swx_db
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_INITDB_ARGS=--encoding=UTF8 --locale=C
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U swx_user -d swx_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - skoda-network
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  # ============================================================================
+  # Backend Service - ŠKODA AI Skill Coach API
+  # ============================================================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: skoda-skill-coach-backend
+    environment:
+      # Database Configuration (Async)
+      - DATABASE_URL=postgresql+asyncpg://swx_user:changeme@db:5432/swx_db
+      - SQLALCHEMY_DATABASE_URI=postgresql+psycopg://swx_user:changeme@db:5432/swx_db
+      - SQLALCHEMY_ASYNC_DATABASE_URI=postgresql+asyncpg://swx_user:changeme@db:5432/swx_db
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=swx_user
+      - DB_PASSWORD=changeme
+      - DB_NAME=swx_db
+      - DATABASE_TYPE=postgres
+      - DOCKERIZED=true
+      
+      # Application Configuration
+      - ENVIRONMENT=local
+      - LOG_LEVEL=info
+      - PROJECT_NAME=ŠKODA AI Skill Coach
+      - ROUTE_PREFIX=/api
+      - BACKEND_HOST=http://localhost:8000
+      - FRONTEND_HOST=http://localhost:5173
+      - BACKEND_CORS_ORIGINS=http://localhost:5173,http://frontend:5173
+      
+      # TONE Format Configuration
+      - USE_TONE=${USE_TONE:-true}
+      - VALIDATION_MODE=${VALIDATION_MODE:-false}
+      
+      # AI Fallback Mode - FORCE FALLBACK FOR SMOKE TESTING
+      - AI_FORCE_FALLBACK=true
+      - SKILL_LLM_PROVIDER=heuristic
+      - AZURE_OPENAI_ENDPOINT=
+      - AZURE_OPENAI_API_KEY=
+      - AZURE_OPENAI_MODEL=
+      - AZURE_OPENAI_API_VERSION=
+      - AZURE_OPENAI_DEPLOYMENT_NAME=
+      - OPENAI_API_KEY=
+      - FEATHERLESS_API_KEY=
+      - OLLAMA_ENDPOINT=
+      - OLLAMA_MODEL=
+      
+      # Monitoring & Error Tracking
+      - SENTRY_DSN=${SENTRY_DSN:-}
+      
+      # API Versions
+      - API_VERSIONS=v1
+      - DEFAULT_API_VERSION=v1
+      
+      # Security
+      - SECRET_KEY=${SECRET_KEY:-changeme-in-production}
+      - REFRESH_SECRET_KEY=${REFRESH_SECRET_KEY:-changeme-in-production}
+      - DEMO_API_TOKEN=${DEMO_API_TOKEN:-skoda-demo-token-2024}
+      
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/logs:/app/logs
+      # Mount code for development (auto-reload)
+      - ./backend/swx_api:/app/swx_api
+      
+    depends_on:
+      db:
+        condition: service_healthy
+      
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+      
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/healthz', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+      
+    restart: unless-stopped
+    networks:
+      - skoda-network
+      
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  # ============================================================================
+  # Frontend Service - Vite/React
+  # ============================================================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    container_name: skoda-skill-coach-frontend
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - skoda-network
+    command: npm run dev -- --host 0.0.0.0
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+# ============================================================================
+# Volumes - Persistent Data Storage
+# ============================================================================
+volumes:
+  pgdata:
+    driver: local
+    name: skoda-skill-coach-pgdata
+
+# ============================================================================
+# Networks - Service Communication
+# ============================================================================
+networks:
+  skoda-network:
+    driver: bridge
+    name: skoda-skill-coach-network
+

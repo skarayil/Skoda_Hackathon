@@ -1,0 +1,55 @@
+# Docker Compose for running tests
+version: '3.8'
+
+services:
+  # Test database
+  test-db:
+    image: postgres:15
+    container_name: test-db
+    environment:
+      - POSTGRES_USER=test_user
+      - POSTGRES_PASSWORD=test_password
+      - POSTGRES_DB=test_db
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
+    volumes:
+      - test-db-data:/var/lib/postgresql/data/pgdata
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test_user -d test_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Test runner
+  test-runner:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.test
+    container_name: test-runner
+    depends_on:
+      test-db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql://test_user:test_password@test-db:5432/test_db
+      - SQLALCHEMY_DATABASE_URI=postgresql://test_user:test_password@test-db:5432/test_db
+      - PROJECT_NAME=ŠKODA AI Skill Coach
+      - LOG_LEVEL=info
+      - SKILL_LLM_PROVIDER=featherless
+      - FEATHERLESS_API_KEY=${FEATHERLESS_API_KEY:-}
+      - USE_TONE=false
+      - VALIDATION_MODE=false
+      - ENVIRONMENT=local
+    volumes:
+      - ./backend/tests:/app/tests
+      - ./backend/swx_api:/app/swx_api
+      - test-results:/app/test-results
+    command: >
+      sh -c "
+        pytest tests/ -v --tb=short --junitxml=/app/test-results/junit.xml || true
+      "
+
+volumes:
+  test-db-data:
+  test-results:
+

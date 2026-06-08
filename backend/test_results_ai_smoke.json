@@ -1,0 +1,84 @@
+{
+  "environment": {
+    "SKILL_LLM_PROVIDER": "featherless",
+    "FEATHERLESS_API_KEY": "rc_3...774b",
+    "FEATHERLESS_MODEL": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "FEATHERLESS_BASE_URL": "https://api.featherless.ai/v1",
+    "startup_log_found": false,
+    "status": "PASS"
+  },
+  "llm_health": {
+    "provider": "featherless",
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "responses_differ": true,
+    "llm_logs_found": false,
+    "status": "PASS"
+  },
+  "ingestion": {
+    "status": "FAIL"
+  },
+  "analysis": {
+    "status": "FAIL"
+  },
+  "narrative": {
+    "status": "FAIL"
+  },
+  "succession": {
+    "status": "FAIL"
+  },
+  "recommendations": {
+    "skills": {
+      "status": "FAIL",
+      "error": "Status 404"
+    },
+    "training_path": {
+      "status": "FAIL",
+      "error": "Status 404"
+    },
+    "next_role": {
+      "status": "FAIL",
+      "error": "Status 404"
+    },
+    "status": "FAIL"
+  },
+  "unified_score": {
+    "scores": [],
+    "scores_vary": false,
+    "status": "PARTIAL"
+  },
+  "logs": {
+    "provider_log": false,
+    "request_log": false,
+    "response_log": false,
+    "tokens_log": false,
+    "status_success": false,
+    "llm_calls_detected": false,
+    "status": "PARTIAL"
+  },
+  "final_report": {
+    "AI_provider": "featherless",
+    "analysis": {
+      "status": "FAIL",
+      "differences_ok": false
+    },
+    "narrative": {
+      "status": "FAIL",
+      "differences_ok": false
+    },
+    "succession": {
+      "status": "FAIL",
+      "ai_influence": false
+    },
+    "recommendations": {
+      "status": "FAIL",
+      "ai_influence": false
+    },
+    "unified_score": {
+      "dynamic": false
+    },
+    "logs": {
+      "llm_calls_detected": false
+    },
+    "AI_Alive_Status": "LIVE"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "dataset_id": "44beb07a-fff8-4abc-a351-30d842256cdc",
+  "dataset_name": "comprehensive_test_dataset_20251119T220610Z",
+  "generated_at": "2025-11-19T22:06:10.573992",
+  "is_skoda_format": false,
+  "total_rows": 100,
+  "total_columns": 13,
+  "missing_values": {
+    "employee_id": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "first_name": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "last_name": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "email": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "department": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "job_family": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "job_title": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "hire_date": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "skills": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "years_experience": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "location": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "manager_id": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "performance_rating": {
+      "count": 0,
+      "percentage": 0.0
+    }
+  },
+  "outliers": {},
+  "correlation_matrix": {},
+  "skill_frequency": {
+    "skills": {
+      "Confluence, GraphQL, SQL, Bash, Jest, GitHub Actions, [REDACTED]": 1,
+      "Scrum, Tableau, Risk Management, Linux, NumPy, Agile": 1,
+      "Redis, CAD, Pandas, Angular, Tableau, Stakeholder Management, Anglický jazyk, Kubernetes, Business Intelligence, Selenium, Azure, Komunikace, Git": 1,
+      "JavaScript, Anglický jazyk, Angular, Bash, ANSYS, GitLab, Terraform, Tableau, Power BI, Redis, Docker, Business Intelligence, Risk Management, Kubernetes, Vedení týmu": 1,
+      "SolidWorks, Terraform, CATIA, Power BI, Prezentace, PyTorch, Selenium, Redis": 1,
+      "Pandas, Kanban, Node.js, JIRA, Angular, Selenium, CI/CD, AWS, Excel, Azure, SolidWorks": 1,
+      "Node.js, GCP, Git, Excel, Agile, FEA, SQL, Redis": 1,
+      "Python, Terraform, Business Intelligence, Kubernetes, Jest, Pytest": 1,
+      "Microservices, ANSYS, Terraform, Business Intelligence, AutoCAD": 1,
+      "Excel, CAD, GraphQL, Microservices, Vue.js, Git, Pytest, gRPC, Jest, Vedení týmu": 1,
+      "Docker, REST API, Test Automation, Redis, Český jazyk, ANSYS, Python, WebSocket, Terraform": 1,
+      "WebSocket, Bash, Git, Tableau, Node.js, FEA, TensorFlow, FastAPI, Vue.js, [REDACTED]": 1,
+      "React, Machine Learning, Cypress, Jenkins, NumPy, Komunikace, Anglický jazyk, Pandas": 1,
+      "Francouzský jazyk, GitHub Actions, SolidWorks, FEA, Kanban, Excel, Pandas, CAD, GCP, gRPC, Business Intelligence, PostgreSQL, Azure, Docker, Vue.js": 1,
+      "CAD, Microservices, Test Automation, Risk Management, PowerShell, CI/CD, Java, Git, Excel, Jenkins, Německý jazyk, Data Science, Confluence, GitLab, Azure": 1,
+      "Řešení problémů, Jenkins, JavaScript, AWS, AutoCAD, Terraform, Bash, JIRA": 1,
+      "FastAPI, Český jazyk, Řešení problémů, Kubernetes, CAD, SQL, Vue.js, Angular, Microservices, Data Science, Jest, Prezentace, Pytest, [REDACTED]": 1,
+      "Python, Git, Test Automation, Project Management, CAD, React, PyTorch, WebSocket": 1,
+      "ANSYS, GitLab, Microservices, Docker, Azure, C++, Java": 1,
+      "Java, PyTorch, Ansible, Machine Learning, SolidWorks, Pandas, Anglický jazyk": 1
+    }
+  }
+}

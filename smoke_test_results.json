@@ -1,0 +1,128 @@
+{
+  "started_at": "2025-11-19T22:07:55.702616+00:00",
+  "sections": {
+    "section_1_health": {
+      "passed": 1,
+      "failed": 0,
+      "checks": [
+        {
+          "check": "healthz",
+          "status": "passed"
+        }
+      ]
+    },
+    "section_2_ai_fallback": {
+      "tests": [
+        {
+          "endpoint": "GET /ai/employee-intel/EMP001",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /ai/team-intel/Engineering",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /ai/succession-intel/Engineering",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /ai/compare/Engineering/Sales",
+          "passed": true
+        },
+        {
+          "endpoint": "POST /ai/training-plan",
+          "passed": true
+        },
+        {
+          "endpoint": "POST /ai/career-chat",
+          "passed": true
+        }
+      ],
+      "passed": 6,
+      "failed": 0
+    },
+    "section_4_routes": {
+      "tests": [
+        {
+          "endpoint": "GET /dashboard/overview",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /dashboard/skill-map",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /dashboard/heatmap",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /dashboard/trends",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/employees/EMP001",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/departments/Engineering",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/global",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/forecast",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/succession/Engineering",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /skills/recommendations/EMP001",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /skills/role-fit/EMP001",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /skills/skill-gaps/EMP001",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /ingestion/datasets",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/predicted-shortages/Engineering",
+          "passed": true
+        },
+        {
+          "endpoint": "GET /analytics/skill-demand-forecast/Python",
+          "passed": true
+        }
+      ],
+      "passed": 15,
+      "failed": 0
+    }
+  },
+  "errors": [
+    "23:07:55: POST /ingestion/ingest returned 404, expected [200, 201, 400]",
+    "23:07:55: Dataset upload failed"
+  ],
+  "warnings": [
+    "23:07:55: Error: {\n  \"error\": \"NotFound\",\n  \"detail\": \"Not Found\",\n  \"details\": {}\n}",
+    "23:07:55: \n\u26a0\ufe0f  Sections 5-8 (Schema, DB, Stress) - TODO in next iteration",
+    "23:07:55: Total Errors: 2",
+    "23:07:55: Total Warnings: 3"
+  ],
+  "summary": {
+    "total_passed": 22,
+    "total_failed": 0,
+    "total_errors": 2,
+    "total_warnings": 2
+  },
+  "completed_at": "2025-11-19T22:07:55.957700+00:00"
+}

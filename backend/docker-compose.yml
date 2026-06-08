@@ -1,0 +1,215 @@
+# Docker Compose for ŠKODA AI Skill Coach
+# Uses docker compose (v2) - no version needed
+
+services:
+  # ============================================================================
+  # Backend Service - ŠKODA AI Skill Coach API
+  # ============================================================================
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: skoda-skill-coach-backend
+    environment:
+      # Database Configuration (Async)
+      - DATABASE_URL=postgresql+asyncpg://swx_user:changeme@db:5432/swx_db
+      - SQLALCHEMY_DATABASE_URI=postgresql+psycopg://swx_user:changeme@db:5432/swx_db
+      - SQLALCHEMY_ASYNC_DATABASE_URI=postgresql+asyncpg://swx_user:changeme@db:5432/swx_db
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=swx_user
+      - DB_PASSWORD=changeme
+      - DB_NAME=swx_db
+      - DATABASE_TYPE=postgres
+      - DOCKERIZED=true
+      
+      # Application Configuration
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PROJECT_NAME=ŠKODA AI Skill Coach
+      - ROUTE_PREFIX=/api
+      - BACKEND_HOST=http://localhost:8000
+      - FRONTEND_HOST=${FRONTEND_HOST:-http://localhost:5173}
+      - BACKEND_CORS_ORIGINS=${BACKEND_CORS_ORIGINS:-*}
+      
+      # TONE Format Configuration
+      - USE_TONE=${USE_TONE:-true}
+      - VALIDATION_MODE=${VALIDATION_MODE:-false}
+      
+      # LLM Configuration
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - FEATHERLESS_API_KEY=${FEATHERLESS_API_KEY:-}
+      - OLLAMA_ENDPOINT=${OLLAMA_ENDPOINT:-http://ollama:11434/v1}
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3.1}
+      
+      # Monitoring & Error Tracking
+      - SENTRY_DSN=${SENTRY_DSN:-}
+      
+      # API Versions
+      - API_VERSIONS=v1
+      - DEFAULT_API_VERSION=v1
+      
+      # Security (if needed)
+      - SECRET_KEY=${SECRET_KEY:-changeme-in-production}
+      
+    volumes:
+      # Persistent data storage
+      - ./data:/app/data
+      - ./logs:/app/logs
+      # Mount code for development (comment out in production)
+      # - ./src:/app/src
+      
+    depends_on:
+      db:
+        condition: service_healthy
+      
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+      
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/healthz', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+      
+    restart: unless-stopped
+    networks:
+      - skoda-network
+      
+    # Resource limits (adjust based on needs)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+  # ============================================================================
+  # PostgreSQL Database - Async-ready
+  # ============================================================================
+  db:
+    image: postgres:15-alpine
+    container_name: skoda-skill-coach-db
+    environment:
+      - POSTGRES_USER=swx_user
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_DB=swx_db
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      # Performance tuning for async operations
+      - POSTGRES_INITDB_ARGS=--encoding=UTF8 --locale=C
+      
+    volumes:
+      # Persistent database storage
+      - pgdata:/var/lib/postgresql/data
+      # Optional: init scripts
+      # - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+      
+    ports:
+      - "${DB_PORT:-5432}:5432"
+      
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U swx_user -d swx_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+      
+    restart: unless-stopped
+    networks:
+      - skoda-network
+      
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+  # ============================================================================
+  # Adminer - Database Management UI
+  # ============================================================================
+  adminer:
+    image: adminer:latest
+    container_name: skoda-skill-coach-adminer
+    environment:
+      - ADMINER_DEFAULT_SERVER=db
+      - ADMINER_DESIGN=pepa-linha-dark
+    ports:
+      - "${ADMINER_PORT:-8080}:8080"
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - skoda-network
+
+  # ============================================================================
+  # pgAdmin - Alternative Database Management (Optional)
+  # ============================================================================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: skoda-skill-coach-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@skoda.local
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - skoda-network
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+  # ============================================================================
+  # Ollama - Local LLM Fallback (Optional)
+  # ============================================================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: skoda-skill-coach-ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "${OLLAMA_PORT:-11435}:11434"
+    restart: unless-stopped
+    networks:
+      - skoda-network
+    # Resource limits (LLM can be resource-intensive)
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+# ============================================================================
+# Volumes - Persistent Data Storage
+# ============================================================================
+volumes:
+  pgdata:
+    driver: local
+    name: skoda-skill-coach-pgdata
+  pgadmin_data:
+    driver: local
+    name: skoda-skill-coach-pgadmin
+  ollama_data:
+    driver: local
+    name: skoda-skill-coach-ollama
+
+# ============================================================================
+# Networks - Service Communication
+# ============================================================================
+networks:
+  skoda-network:
+    driver: bridge
+    name: skoda-skill-coach-network
