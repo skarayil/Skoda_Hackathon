@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
+import { getMockData } from './mockData';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
@@ -38,6 +39,21 @@ const apiClient: AxiosInstance = axios.create({
 // Request interceptor for logging (dev only)
 apiClient.interceptors.request.use(
   (config) => {
+    // ALWAYS use mock data adapter for GitHub Pages demonstration
+    config.adapter = async () => {
+      // Simulate slight network latency
+      await new Promise(resolve => setTimeout(resolve, 400));
+      const mockResponse = getMockData(config.url || '');
+      return {
+        data: mockResponse,
+        status: 200,
+        statusText: 'OK',
+        headers: {} as any,
+        config: config,
+        request: {}
+      };
+    };
+
     if (import.meta.env.DEV) {
       console.log(`[API] ${config.method?.toUpperCase()} ${config.url}`, config.data || config.params);
     }
